@@ -2,5 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    // padding: 1rem 2rem;
 }
+
+.nav-links-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+

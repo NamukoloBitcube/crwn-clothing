@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './pages/homepage/homepage.component';
 import Navigation from './pages/navigation/navigation.component';
+import Authentication from './pages/authentication/authentication.component';
 
 
 const HatsPage = () => (
@@ -13,8 +14,6 @@ const HatsPage = () => (
   </div>
 );
 
-
-
 function App() {
   return (
     <div>
@@ -22,6 +21,7 @@ function App() {
         <Route path='/' element={ <Navigation /> } >
           <Route index element={ <HomePage /> } />
           <Route  path='/hats' element={ <HatsPage /> } />
+          <Route path='/auth' element ={ <Authentication />} />
         </Route>
       </Routes>
     </div>
