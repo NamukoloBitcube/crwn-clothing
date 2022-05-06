@@ -6,14 +6,12 @@ import { createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils'
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
-
 const defaultFormFields = {
     displayName: '',
     email: '',
     password: '',
     confirmPassword: ''
 }
-
 
 const SignUpForm = () => {
 
@@ -36,6 +34,7 @@ const SignUpForm = () => {
         //try catch when interfacing with APIs as I dont have control over implementation of said API and any changes shouldn't break my app
         try {
             const { user } =  await createAuthUserWithEmailAndPassword(email.value, password.value);
+
             await createUserDocumentFromAuth(user, { displayName });
             // resetFormFields();
         } catch(error){

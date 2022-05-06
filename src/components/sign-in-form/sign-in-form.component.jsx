@@ -1,8 +1,7 @@
 import './sign-in-form.styles.scss';
 import { useState } from 'react';
-import { createAuthUserWithEmailAndPassword, signInWithGooglePopup, signInUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+import {  signInWithGooglePopup, signInUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 import { createUserDocumentFromAuth, } from '../../utils/firebase/firebase.utils';
-
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
@@ -21,10 +20,8 @@ const SignInForm = () => {
 
     // const resetFormFields = setFormFields(defaultFormFields);
 
-
     const signInWithGoogle =  async () => {
-        const {user} = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+         await signInWithGooglePopup();
     }
 
     const handleSubmit = async (event) => {
@@ -32,11 +29,10 @@ const SignInForm = () => {
         
         const { email, password } = event.target
       
-
         //try catch when interfacing with APIs as I dont have control over implementation of said API and any changes shouldn't break my app
         try {
-            const response =  await signInUserWithEmailAndPassword(email.value, password.value)
-            console.log(response)
+            const { user } =  await signInUserWithEmailAndPassword(email.value, password.value)
+            // setCurrentUser(user)
             alert('Sign in successful')
         } catch(error){
             if(error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found'){
@@ -45,7 +41,6 @@ const SignInForm = () => {
                 alert(error.message);
             }
         }
-        
     }
 
     const handleChange = (event) => {
