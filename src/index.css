@@ -8,7 +8,7 @@
 }
 
 html{
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
 
 body {
@@ -16,8 +16,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.4rem;
-  padding: 2rem;
+  font-size: 14px;
+  padding: 20px 40px;
 }
 
 code {

@@ -6,13 +6,7 @@ import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 import Navigation from './pages/navigation/navigation.component';
 import Authentication from './pages/authentication/authentication.component';
-
-
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-);
+import Shop from './components/shop/shop.component';
 
 function App() {
   return (
@@ -20,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <Navigation /> } >
           <Route index element={ <HomePage /> } />
-          <Route  path='/hats' element={ <HatsPage /> } />
+          <Route  path='/hats' element={ <Shop /> } />
           <Route path='/auth' element ={ <Authentication />} />
         </Route>
       </Routes>
